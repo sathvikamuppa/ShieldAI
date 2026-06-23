@@ -187,5 +187,6 @@ ShieldAI enables organizations to confidently adopt AI technologies while protec
 ---
 
 ## Team ShieldAI
-
+- Sathvika Muppa
+- Bhavanani Nimmaluri
 Building Secure AI for Everyone.
