@@ -1,107 +1,245 @@
-# 🛡️ ShieldAI – AI-Powered Sensitive Data Protection Layer
+# 🛡️ ShieldAI
 
-## Overview
+### Enterprise AI Governance Firewall for Secure Generative AI Adoption
 
-ShieldAI is an intelligent security layer designed to prevent sensitive information from being unintentionally exposed to AI systems.
+ShieldAI is an enterprise-grade AI governance platform designed to prevent sensitive information from being exposed to external Large Language Models (LLMs) such as ChatGPT, Gemini, Claude, and Microsoft Copilot.
 
-As organizations increasingly adopt Generative AI tools, employees often paste confidential information such as Aadhaar numbers, PAN numbers, banking details, passwords, API keys, and customer records into AI platforms. This creates significant privacy, security, and compliance risks.
+As organizations increasingly integrate AI into daily workflows, employees often unknowingly share confidential customer information, internal business data, credentials, source code, and personally identifiable information (PII) with external AI systems. ShieldAI acts as a security layer between enterprise users and AI platforms by automatically detecting, assessing, sanitizing, and restoring sensitive information while preserving business context.
 
-ShieldAI acts as a protective gateway that analyzes content before it reaches an AI model, ensuring that sensitive information is identified, risk-assessed, and sanitized when necessary.
+---
+
+## Executive Summary
+
+The rapid adoption of Generative AI has introduced significant security and compliance challenges for enterprises. Employees frequently use AI assistants for drafting emails, generating reports, reviewing code, summarizing documents, and preparing customer communications. In doing so, sensitive information may inadvertently be transmitted to external AI providers.
+
+ShieldAI addresses this challenge by implementing an AI Governance Firewall that performs:
+
+* Sensitive Data Detection
+* Credential and Secret Identification
+* AI-Powered Entity Recognition
+* Risk Assessment and Governance Decisions
+* Prompt Sanitization
+* Context Rehydration
+
+The platform enables organizations to safely leverage Generative AI without compromising data privacy, regulatory compliance, or intellectual property.
 
 ---
 
 ## Problem Statement
 
-Modern AI tools improve productivity but introduce a critical challenge:
+Organizations face growing concerns regarding the secure adoption of AI technologies.
 
-* Accidental exposure of Personally Identifiable Information (PII)
-* Leakage of customer data
-* Exposure of credentials and API keys
-* Regulatory compliance risks
-* Lack of visibility into sensitive information shared with AI systems
+Common risks include:
 
-Organizations need a mechanism to safely adopt AI without compromising data security.
+* Exposure of customer information
+* Leakage of internal business documents
+* Disclosure of credentials and API keys
+* Sharing of proprietary source code
+* Violation of privacy and compliance regulations
+* Loss of intellectual property
 
----
+Traditional security controls are not designed to inspect AI prompts before they are transmitted to external AI systems.
 
-## Our Solution
-
-ShieldAI provides an intelligent pre-processing layer that:
-
-✅ Detects sensitive information
-
-✅ Identifies Personally Identifiable Information (PII)
-
-✅ Detects credentials and secrets
-
-✅ Calculates a security risk score
-
-✅ Generates sanitized outputs
-
-✅ Recommends Allow, Sanitize, or Block actions
+ShieldAI introduces a proactive security layer that evaluates content before it reaches external AI providers.
 
 ---
 
-## Key Features
+## Solution Overview
+
+ShieldAI serves as an intelligent intermediary between enterprise users and external AI systems.
+
+The platform performs the following workflow:
+
+1. Analyze user prompts and uploaded documents
+2. Detect sensitive information and entities
+3. Calculate a risk score and governance decision
+4. Replace sensitive content with secure placeholders
+5. Generate a sanitized prompt for AI processing
+6. Restore original business context after AI response generation
+
+This approach ensures that confidential information never leaves the organization while maintaining the usability of AI-generated outputs.
+
+---
+
+## Why ShieldAI?
+
+Most AI security solutions stop at detection.
+
+ShieldAI goes beyond detection by introducing a complete enterprise-safe AI workflow:
+
+* Detect sensitive information
+* Assess governance risk
+* Sanitize content before external sharing
+* Enable secure AI processing
+* Restore original business context after AI response generation
+
+The platform’s Context Rehydration Engine allows organizations to safely leverage external AI systems without permanently losing business context.
+
+---
+
+## Core Capabilities
 
 ### Sensitive Data Detection
+
+ShieldAI automatically identifies:
 
 * Email Addresses
 * Phone Numbers
 * Aadhaar Numbers
 * PAN Numbers
-* Banking Information
 * Passwords
 * API Keys
-* Authentication Tokens
+* GitHub Tokens
+* Infrastructure Information
+* Internal Identifiers
+
+---
+
+### AI-Powered Entity Recognition
+
+Using Natural Language Processing and Named Entity Recognition models, ShieldAI detects:
+
+* Persons
+* Organizations
+* Locations
+
+Example:
+
+```text
+Rahul Sharma
+Microsoft
+Hyderabad
+```
+
+Automatically transformed into:
+
+```text
+[PERSON_1]
+[ORG_1]
+[LOCATION_1]
+```
+
+---
 
 ### Risk Assessment Engine
 
-* Dynamic Risk Scoring
-* Threat Classification
-* Security Recommendations
+ShieldAI evaluates content using a governance-based scoring mechanism.
 
-### AI Security Layer
+Generated outputs include:
 
-* Content Inspection
-* Data Sanitization
-* Leakage Prevention
-* Secure AI Adoption
+* Risk Score
+* Risk Level
+* Governance Decision
+* Detection Summary
+* Threat Intelligence Report
 
-### User-Friendly Dashboard
+Risk classifications:
 
-* Real-Time Analysis
-* Threat Visualization
-* Risk Indicators
-* Sanitized Output Comparison
+| Level  | Description                                 |
+| ------ | ------------------------------------------- |
+| Low    | Minimal sensitive information detected      |
+| Medium | Sensitive information requires sanitization |
+| High   | Significant data leakage risk identified    |
+
+---
+
+### Prompt Sanitization Engine
+
+Before a prompt is transmitted to an external AI platform, all sensitive information is replaced with secure placeholders.
+
+Example:
+
+```text
+Project Manager: Rahul Sharma
+Email: rahul.sharma@microsoft.com
+Organization: Microsoft
+```
+
+Becomes:
+
+```text
+Project Manager: [PERSON_1]
+Email: [EMAIL_1]
+Organization: [ORG_1]
+```
+
+This ensures that no confidential information is exposed to external systems.
+
+---
+
+### Context Rehydration Engine
+
+One of ShieldAI’s key innovations is Context Rehydration.
+
+After an external AI generates a response using sanitized content, ShieldAI restores the original business context by securely replacing placeholders with their corresponding values.
+
+Example:
+
+AI Response:
+
+```text
+Dear [PERSON_1],
+
+Your project with [ORG_1] has been delayed.
+```
+
+Rehydrated Output:
+
+```text
+Dear Rahul Sharma,
+
+Your project with Microsoft has been delayed.
+```
+
+This capability enables organizations to maintain complete data privacy without sacrificing the quality or usefulness of AI-generated responses.
+
+---
+
+### Secure Document Processing
+
+ShieldAI supports secure analysis of multiple document formats.
+
+Supported file types:
+
+* TXT
+* PDF
+* DOCX
+
+Uploaded files undergo the same detection, risk assessment, sanitization, and rehydration workflow as text prompts.
 
 ---
 
 ## System Architecture
 
+```text
 User Input / Document Upload
-
-↓
-
-ShieldAI Processing Layer
-
-↓
-
-Sensitive Entity Detection
-
-↓
-
-Risk Scoring Engine
-
-↓
-
-Decision Engine
-
-(Allow / Sanitize / Block)
-
-↓
-
-Safe AI Interaction
+                │
+                ▼
+      ShieldAI Detection Engine
+                │
+ ┌──────────────┼──────────────┐
+ │              │              │
+ ▼              ▼              ▼
+PII         Entity         Credential
+Detection   Recognition    Detection
+ │              │              │
+ └──────────────┼──────────────┘
+                ▼
+        Risk Assessment Engine
+                │
+                ▼
+       Prompt Sanitization
+                │
+                ▼
+        External AI Platform
+   (ChatGPT / Gemini / Claude)
+                │
+                ▼
+      Context Rehydration Engine
+                │
+                ▼
+          Final Safe Output
+```
 
 ---
 
@@ -109,85 +247,93 @@ Safe AI Interaction
 
 ### Frontend
 
-* React
+* React.js
 * Vite
-* CSS
+* Modern CSS
 
 ### Backend
 
 * FastAPI
 * Python
 
-### AI / NLP
+### Artificial Intelligence
 
-* Transformers
-* PyTorch
+* Hugging Face Transformers
 * Named Entity Recognition (NER)
+* NLP-Based Detection Models
 
 ### Document Processing
 
 * PyPDF2
 * python-docx
 
----
+### Development Tools
 
-## Demo Workflow
-
-1. User enters text or uploads a document.
-2. ShieldAI scans the content.
-3. Sensitive entities are detected.
-4. Risk score is calculated.
-5. Security recommendation is generated.
-6. Sanitized content is produced.
-7. Safe content can be forwarded to AI systems.
+* Git
+* GitHub
+* Visual Studio Code
 
 ---
 
-## Example Use Cases
+## Business Impact
 
-### Enterprise AI Security
+ShieldAI enables organizations to:
 
-Prevent confidential information from being exposed to AI assistants.
+* Prevent accidental data leakage
+* Improve AI governance and oversight
+* Protect customer information
+* Strengthen compliance readiness
+* Secure enterprise AI adoption
+* Reduce operational and reputational risk
+* Preserve intellectual property
 
-### Customer Support
+---
 
-Protect customer records before AI-assisted processing.
+## Potential Applications
 
-### Financial Services
-
-Detect banking information and sensitive identifiers.
-
-### Healthcare
-
-Prevent accidental disclosure of patient information.
-
-### Government & Public Sector
-
-Secure citizen data before AI interactions.
+* Financial Services
+* Healthcare
+* Government Agencies
+* IT Services
+* Customer Support Platforms
+* Enterprise Software Teams
+* Consulting Organizations
+* AI-Driven Business Operations
 
 ---
 
 ## Future Enhancements
 
-* Role-Based Access Control (RBAC)
-* Enterprise SSO Integration
-* Real-Time Monitoring
-* Audit Logs
-* Multi-Language Support
-* Cloud Deployment
+* Enterprise Policy Management
+* Real-Time Browser Extension
+* Microsoft Copilot Integration
 * Compliance Reporting
-* Advanced Threat Intelligence
+* Audit Logging Dashboard
+* Multi-Language Support
+* Role-Based Access Control
+* Real-Time Prompt Monitoring
 
 ---
 
-## Impact
+## Team
 
-ShieldAI enables organizations to confidently adopt AI technologies while protecting sensitive information, improving compliance, and reducing the risk of data leakage.
+### Sathvika Muppa
+
+Full Stack Developer
+
+### Bhavana Nimmaluri
+
+Full Stack Developer
 
 ---
 
-## Team ShieldAI
-- Sathvika Muppa
-- Bhavanani Nimmaluri
-  
-Building Secure AI for Everyone.
+## Conclusion
+
+ShieldAI demonstrates how organizations can safely embrace Generative AI without compromising security, privacy, or compliance requirements. By combining intelligent detection, risk assessment, prompt sanitization, and context rehydration, ShieldAI establishes a secure foundation for enterprise AI adoption.
+
+---
+
+# Protect. Govern. Rehydrate.
+
+### ShieldAI — Enterprise AI Governance Firewall for the Future of Secure AI Adoption. 🛡️🚀
+
