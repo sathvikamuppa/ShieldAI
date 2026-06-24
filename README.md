@@ -319,11 +319,9 @@ ShieldAI enables organizations to:
 
 ### Sathvika Muppa
 
-Full Stack Developer
 
 ### Bhavana Nimmaluri
 
-Full Stack Developer
 
 ---
 
